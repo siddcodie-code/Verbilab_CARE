@@ -1,0 +1,26 @@
+# Environment
+.env
+*.env
+
+# Database — DO NOT commit
+care.db
+*.db
+*.sqlite
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Uploads folder — DO NOT commit audio files
+uploads/
+!uploads/.gitkeep
+
+# Temp chunks
+care_chunks_*/
+care_dl_*/
+sarvam_batch_*/
