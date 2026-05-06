@@ -10,7 +10,7 @@ import os
 from datetime import datetime, timezone
 from contextlib import contextmanager
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "care.db")
+DB_PATH = os.getenv("DB_PATH", "/tmp/care.db")
 
 
 @contextmanager
