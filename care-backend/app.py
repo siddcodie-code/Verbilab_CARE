@@ -442,18 +442,10 @@ def agent_kpis():
 
 
 # ════════════════════════════════════════════════════════
-if __name__ == "__main__":
-    print("🎯 CARE Backend v4")
-    print(f"   DB      : {os.path.join(os.path.dirname(__file__), 'care.db')}")
-    print(f"   Sarvam  : {'✓ set' if os.getenv('SARVAM_API_KEY') else '✗ MISSING'}")
-    print(f"   Auth    : {'JWT enabled' if AUTH_AVAILABLE else 'disabled (pip install pyjwt bcrypt)'}")
-    print(f"   Health  : http://localhost:5000/api/health\n")
-
-# ════════════════════════════════════════════════════════
 # Entry point
 # ════════════════════════════════════════════════════════
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))  # default fallback
+    port = int(os.getenv("PORT", 8080))
     debug = os.getenv("FLASK_ENV", "production") == "development"
 
     print("🎯 CARE Backend v4")
@@ -461,8 +453,6 @@ if __name__ == "__main__":
     print(f"   DB      : {os.path.join(os.path.dirname(__file__), 'care.db')}")
     print(f"   Sarvam  : {'✓ set' if os.getenv('SARVAM_API_KEY') else '✗ MISSING'}")
     print(f"   Auth    : {'JWT enabled' if AUTH_AVAILABLE else 'disabled'}")
+    print(f"   Health  : http://localhost:{port}/api/health\n")
 
-    if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8080))
-    app.run(host="0.0.0.0", port=port, debug=False)
-     
+    app.run(host="0.0.0.0", port=port, debug=debug)
